@@ -1,0 +1,7 @@
+.myclass {
+    color: rgb(73, 148, 73);
+}
+
+.myclass:active {
+    color: red;
+}
