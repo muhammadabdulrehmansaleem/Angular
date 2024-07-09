@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test2',
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './test2.component.css'
 })
 export class Test2Component {
-  var1 = 22
+  counter: number = 0;
+  @Input() message: number | undefined;
+  increment() {
+    this.counter++;
+  }
+  reset() {
+    this.counter = 0;
+  }
 }
