@@ -5,3 +5,15 @@
 .myclass:active {
     color: red;
 }
+
+.text-danger {
+    color: blue;
+}
+
+.showButton {
+    display: none;
+}
+
+.hideButton {
+    display: block;
+}
