@@ -12,4 +12,11 @@ import { Test3Component } from './test3/test3.component';
 export class AppComponent {
   title = 'hello-world';
   appCompData: string = "This is the data i am passing from app component!!";
+  appmessage: string = "I am app and sending this message from parent to child";
+  personObject = {
+    name: "Abdulrehman",
+    city: "Shahkot",
+    ph: 123
+  }
+  fruitArray = ["apple", "mango", "banana"]
 }

@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 export class Test2Component {
   counter: number = 0;
   @Input() message: number | undefined;
+  testmessage: string = "Test2 is giving this message";
   increment() {
     this.counter++;
   }
