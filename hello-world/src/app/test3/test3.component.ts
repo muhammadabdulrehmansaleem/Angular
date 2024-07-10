@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgSwitchCase, NgSwitchDefault, NgSwitch } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-test3',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NgSwitchCase, NgSwitchDefault, NgSwitch],
   templateUrl: './test3.component.html',
   styleUrl: './test3.component.css'
 })
@@ -20,8 +20,9 @@ export class Test3Component {
   isactive = false;
   hasError = false;
   greekmessage: string = "";
+  islogin = true;
   showMessage() {
-    this.greekmessage = "Hi i nice to meet you!!";
+    this.greekmessage = "Hiii nice to meet you!!";
   }
   receiveMessage(value: any) {
     console.log(value);
@@ -32,4 +33,10 @@ export class Test3Component {
   convertToFahrenheit() {
     this.fahrenheit = (this.celcius * 9 / 5) + 32;
   }
+  handelClick() {
+    this.islogin = !this.islogin;
+  }
+  color = "green";
+  counting = [1, 2, 3, 4, 5, 6, 7, 8]
 }
+
