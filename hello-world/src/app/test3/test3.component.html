@@ -2,7 +2,7 @@
 <br>
 <h3 [class.text-danger]="dangerClass">Hello danger</h3>
 <br>
-<h3>{{inputFeild}}</h3>
+<!-- <h3>{{inputFeild}}</h3>
 <input [disabled]="isDisabled" value="Abdulrehman" class="myclass">
 <br>
 <h3 [style.color]="hasError?'red':'green'">Style Binding</h3>
@@ -10,8 +10,8 @@
     <p>{{parentObject.name}}</p>
     <p>{{parentObject.city}}</p>
     <p>{{parentObject.ph}}</p>
-</div>
-<div>
+</div> -->
+<!-- <div>
     <ul>
         <li *ngFor="let item of fruits">{{ item }}</li>
     </ul>
@@ -19,4 +19,12 @@
 <div>
     <button (click)="showMessage()">Greet</button>
 </div>
-<h2>{{greekmessage}}</h2>
+<h2>{{greekmessage}}</h2> -->
+<input #myInput type="text">
+<button (click)="receiveMessage(myInput)">Send</button>
+<div>
+    <h3>name from parent is {{username}}</h3>
+</div>
+<label for="temp">Enter temperature in celcius</label>
+<input type="text" name="temo" [(ngModel)]="celcius" (ngModelChange)="convertToFahrenheit()">
+<h2>The temperature in farenheit is {{celcius}} to {{fahrenheit}}</h2>

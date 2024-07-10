@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-test3',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './test3.component.html',
   styleUrl: './test3.component.css'
 })
@@ -21,5 +22,14 @@ export class Test3Component {
   greekmessage: string = "";
   showMessage() {
     this.greekmessage = "Hi i nice to meet you!!";
+  }
+  receiveMessage(value: any) {
+    console.log(value);
+  }
+  @Input() username: string | undefined;
+  celcius = 0;
+  fahrenheit = 32;
+  convertToFahrenheit() {
+    this.fahrenheit = (this.celcius * 9 / 5) + 32;
   }
 }
