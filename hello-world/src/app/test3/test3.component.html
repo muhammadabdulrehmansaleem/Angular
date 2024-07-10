@@ -26,5 +26,18 @@
     <h3>name from parent is {{username}}</h3>
 </div>
 <label for="temp">Enter temperature in celcius</label>
-<input type="text" name="temo" [(ngModel)]="celcius" (ngModelChange)="convertToFahrenheit()">
+<input type="text" name="temp" [(ngModel)]="celcius" (ngModelChange)="convertToFahrenheit()">
 <h2>The temperature in farenheit is {{celcius}} to {{fahrenheit}}</h2>
+<button *ngIf="!islogin;else elseBlock" (click)="handelClick()">Login</button>
+<ng-template #elseBlock>
+    <button (click)="handelClick()">Logout</button>
+</ng-template>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">Red color picked</div>
+    <div *ngSwitchCase="'blue'">Blue color picked</div>
+    <div *ngSwitchCase="'green'">Green color picked</div>
+    <div *ngSwitchDefault>Pick color again</div>
+</div>
+<div *ngFor="let count of counting; index as i ">
+    <h4>{{count}} is at index {{i}}</h4>
+</div>
