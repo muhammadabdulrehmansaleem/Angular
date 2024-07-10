@@ -21,4 +21,6 @@ export class AppComponent {
   }
   fruitArray = ["apple", "mango", "banana"]
   username: string = "";
+  childmess: string = "";
+  childrenmessage: any = ""
 }

@@ -38,6 +38,11 @@
     <div *ngSwitchCase="'green'">Green color picked</div>
     <div *ngSwitchDefault>Pick color again</div>
 </div>
-<div *ngFor="let count of counting; index as i ">
+<!-- <div *ngFor="let count of counting; index as i ">
     <h4>{{count}} is at index {{i}}</h4>
-</div>
+</div> -->
+<button (click)="sendmessage()">Send message to child</button>
+<br>
+<label for="sending">enter the data to send parent</label>
+<input type="text" [(ngModel)]="childsendingdata" (ngModelChange)="senderhandler()">
+<!-- <p>{{childsendingdata}}</p> -->
