@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule, NgSwitchCase, NgSwitchDefault, NgSwitch } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -38,5 +38,14 @@ export class Test3Component {
   }
   color = "green";
   counting = [1, 2, 3, 4, 5, 6, 7, 8]
+  @Output() messagefromchild = new EventEmitter();
+  sendmessage() {
+    this.messagefromchild.emit("This is the child's message !!");
+  }
+  childsendingdata: any = "";
+  @Output() senderChild = new EventEmitter<any>();
+  senderhandler() {
+    this.senderChild.emit(this.childsendingdata);
+  }
 }
 
