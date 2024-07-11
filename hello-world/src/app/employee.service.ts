@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Employee } from './Employee.model';
+import { IEmployee } from './Employee.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-
-  constructor() { }
-  getEmployee(): Employee[] {
-    return [
-      { "name": "Abdulrehman", "location": "skt" },
-      { "name": "Abubakkar", "location": "skt" },
-      { "name": "Umar", "location": "skt" }
-    ];
+  private _url: string = "https://fakestoreapi.com/users";
+  constructor(private http: HttpClient) { }
+  getEmployee(): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this._url);
   }
 }
