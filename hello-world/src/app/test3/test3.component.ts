@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule, NgSwitchCase, NgSwitchDefault, NgSwitch } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
-import { Employee } from '../Employee.model';
+import { IEmployee } from '../Employee.model';
 @Component({
   selector: 'app-test3',
   standalone: true,
@@ -14,9 +14,9 @@ export class Test3Component {
   constructor(private _employeeservice: EmployeeService) {
 
   }
-  employees: Employee[] = [];
+  employees: IEmployee[] = [];
   ngOnInit() {
-    this.employees = this._employeeservice.getEmployee();
+    this._employeeservice.getEmployee().subscribe(data => this.employees = data);
   }
   bottle: string = "I am in 3rd child";
   @Input() inputFeild: string | undefined;

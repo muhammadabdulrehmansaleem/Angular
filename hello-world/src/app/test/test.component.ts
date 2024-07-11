@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Test2Component } from '../test2/test2.component';
 import { EmployeeService } from '../employee.service';
-import { Employee } from '../Employee.model';
+import { IEmployee } from '../Employee.model';
 @Component({
   selector: 'app-test',
   standalone: true,
@@ -11,10 +11,10 @@ import { Employee } from '../Employee.model';
   styleUrl: './test.component.css'
 })
 export class TestComponent {
-  employee: Employee[] = [];
+  employee: IEmployee[] = [];
   constructor(private _employeeservice: EmployeeService) { }
   ngOnInit() {
-    this.employee = this._employeeservice.getEmployee();
+    this._employeeservice.getEmployee().subscribe(data => this.employee = data);
   }
   title = 'Abdulrehman testing';
   messageFromTest3: number = 211111;
