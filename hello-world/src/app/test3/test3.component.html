@@ -20,10 +20,10 @@
     <button (click)="showMessage()">Greet</button>
 </div>
 <h2>{{greekmessage}}</h2> -->
-<input #myInput type="text">
+<!-- <input #myInput type="text">
 <button (click)="receiveMessage(myInput)">Send</button>
 <div>
-    <h3>name from parent is {{username}}</h3>
+    <h3>name from parent is {{username|lowercase}}</h3>
 </div>
 <label for="temp">Enter temperature in celcius</label>
 <input type="text" name="temp" [(ngModel)]="celcius" (ngModelChange)="convertToFahrenheit()">
@@ -31,18 +31,30 @@
 <button *ngIf="!islogin;else elseBlock" (click)="handelClick()">Login</button>
 <ng-template #elseBlock>
     <button (click)="handelClick()">Logout</button>
-</ng-template>
-<div [ngSwitch]="color">
+</ng-template> -->
+<!-- <div [ngSwitch]="color">
     <div *ngSwitchCase="'red'">Red color picked</div>
     <div *ngSwitchCase="'blue'">Blue color picked</div>
     <div *ngSwitchCase="'green'">Green color picked</div>
     <div *ngSwitchDefault>Pick color again</div>
-</div>
+</div> -->
 <!-- <div *ngFor="let count of counting; index as i ">
     <h4>{{count}} is at index {{i}}</h4>
 </div> -->
-<button (click)="sendmessage()">Send message to child</button>
+<!-- <button (click)="sendmessage()">Send message to child</button>
 <br>
 <label for="sending">enter the data to send parent</label>
-<input type="text" [(ngModel)]="childsendingdata" (ngModelChange)="senderhandler()">
+<input type="text" [(ngModel)]="childsendingdata" (ngModelChange)="senderhandler()"> -->
 <!-- <p>{{childsendingdata}}</p> -->
+
+
+
+<!-- making a json pipe -->
+
+
+<!-- <p>there i am displaying the json pipe
+    {{person|json}}
+</p> -->
+<div *ngFor="let employe of employees;index as i">
+    <h3 [class]="myClass">{{employe.name}} and his location is {{employe.location}} he lies at index {{i}}</h3>
+</div>
