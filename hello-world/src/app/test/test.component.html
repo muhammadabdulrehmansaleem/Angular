@@ -3,3 +3,6 @@
 <div>
     <app-test2 [message]="messageFromTest3"></app-test2>
 </div>
+<div *ngFor="let employe of employee;index as i">
+    <h2>{{employe.name}} is at index {{i}}</h2>
+</div>
