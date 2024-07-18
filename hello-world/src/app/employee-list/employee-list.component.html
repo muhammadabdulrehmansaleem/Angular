@@ -1,0 +1,12 @@
+<p>employee-list works!</p>
+<ul>
+    <li *ngFor="let employe of employees">
+        <h2>{{ employe.name.firstname }} {{ employe.name.lastname }}</h2>
+        <p>Email: {{ employe.email }}</p>
+        <p>Username: {{ employe.username }}</p>
+        <p>Phone: {{ employe.phone }}</p>
+        <p>Address: {{ employe.address.number }}, {{ employe.address.street }}, {{ employe.address.city }}, {{
+            employe.address.zipcode }}</p>
+        <p>Geolocation: ({{ employe.address.geolocation.lat }}, {{ employe.address.geolocation.long }})</p>
+    </li>
+</ul>
