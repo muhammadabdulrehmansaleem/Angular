@@ -1,6 +1,6 @@
 <p>employee-list works!</p>
 <ul>
-    <li *ngFor="let employe of employees">
+    <li (click)="onSelect(employe)" [class.selected]="isSelected(employe)" *ngFor="let employe of employees">
         <h2>{{ employe.name.firstname }} {{ employe.name.lastname }}</h2>
         <p>Email: {{ employe.email }}</p>
         <p>Username: {{ employe.username }}</p>

@@ -7,10 +7,11 @@ import { EmployeeService } from './employee.service';
 import { MainComponent } from './main/main.component';
 import { Test2Component } from './test2/test2.component';
 import { ActivatedRoute } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, TestComponent, Test3Component, FormsModule, MainComponent, Test2Component],
+  imports: [RouterOutlet, RouterModule, TestComponent, Test3Component, FormsModule, MainComponent, Test2Component, NavbarComponent],
   providers: [EmployeeService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
