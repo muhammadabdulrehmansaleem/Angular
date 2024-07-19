@@ -1,17 +1,19 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { CommonModule, NgSwitchCase, NgSwitchDefault, NgSwitch } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { IEmployee } from '../Employee.model';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-test3',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgSwitchCase, NgSwitchDefault, NgSwitch],
+  imports: [CommonModule, FormsModule, NgSwitchCase, NgSwitchDefault, NgSwitch, RouterOutlet, RouterModule,],
   templateUrl: './test3.component.html',
   styleUrl: './test3.component.css'
 })
 export class Test3Component {
-  constructor(private _employeeservice: EmployeeService) {
+  constructor(private _employeeservice: EmployeeService, private router: Router, private route: ActivatedRoute) {
 
   }
   employees: IEmployee[] = [];
@@ -24,7 +26,8 @@ export class Test3Component {
   @Input() parentObject: any | undefined;
   @Input() fruits: string[] | undefined;
   isDisabled = 0;
-  myClass = "myclass";
+  myClass = "myclassjasasj";
+  name = "abd"
   dangerClass = true;
   isactive = false;
   hasError = false;
@@ -60,6 +63,10 @@ export class Test3Component {
     name: "Abdulrehman",
     location: "MMT",
     ph: "101010101"
+  }
+  topics = ['Angular', 'React', 'Vue']
+  showUserForm() {
+    this.router.navigate(['tdf'], { relativeTo: this.route })
   }
 }
 

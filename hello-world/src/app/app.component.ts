@@ -8,10 +8,11 @@ import { MainComponent } from './main/main.component';
 import { Test2Component } from './test2/test2.component';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TDFComponent } from './tdf/tdf.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, TestComponent, Test3Component, FormsModule, MainComponent, Test2Component, NavbarComponent],
+  imports: [RouterOutlet, RouterModule, TestComponent, Test3Component, FormsModule, MainComponent, Test2Component, NavbarComponent, TDFComponent],
   providers: [EmployeeService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
