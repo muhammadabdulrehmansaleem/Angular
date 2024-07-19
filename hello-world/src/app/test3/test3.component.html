@@ -1,7 +1,7 @@
-<p [class]="myClass">test3 works!</p>
+<!-- <p [class]="myClass">test3 works!</p>
 <br>
 <h3 [class.text-danger]="dangerClass">Hello danger</h3>
-<br>
+<br> -->
 <!-- <h3>{{inputFeild}}</h3>
 <input [disabled]="isDisabled" value="Abdulrehman" class="myclass">
 <br>
@@ -58,3 +58,6 @@
 <!-- <div *ngFor="let employe of employees;index as i">
     <h3 [class]="myClass">{{employe.name}} and his location is {{employe.location}} he lies at index {{i}}</h3>
 </div> -->
+<h1>User form</h1>
+<router-outlet></router-outlet>
+<button class="btn btn-primary" (click)="showUserForm()">Go to user Form</button>

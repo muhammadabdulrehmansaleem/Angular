@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+        <!-- {{userForm.value|json}}
+        <hr>
+        {{userModel|json}} -->
+        <!-- {{userForm.value|json}} -->
+        {{userForm.form.valid}}
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required
+                class="form-control" name="name" [(ngModel)]="userModel.name">
+            <small class="text-danger" [class.d-none]="name.valid||name.touched">Name is required</small>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="userModel.email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="">Phone</label>
+            <input type="tel" #phone="ngModel" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched"
+                class="form-control" [(ngModel)]="userModel.phone" name="phone">
+        </div>
+        <!-- <div ngModelGroup="address">
+            <div class="form-group">
+                <label for="">city</label>
+                <input type="text" class="form-control" ngModel name="city">
+            </div>
+            <div class="form-group">
+                <label for="">street</label>
+                <input type="text" class="form-control" ngModel name="street">
+            </div>
+            <div class="form-group">
+                <label for="">state</label>
+                <input type="text" class="form-control" ngModel name="state">
+            </div>
+        </div> -->
+        <div class="custom-select">
+            <select name="" id="" class="form-control" [(ngModel)]="userModel.topic" name="topic">
+                <option selected>I am interested in</option>
+                <option *ngFor="let topic of topics">{{topic}}</option>
+            </select>
+        </div>
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit Form</button>
+    </form>
+</div>
