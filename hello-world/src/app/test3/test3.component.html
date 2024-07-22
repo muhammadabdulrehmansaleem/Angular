@@ -58,6 +58,10 @@
 <!-- <div *ngFor="let employe of employees;index as i">
     <h3 [class]="myClass">{{employe.name}} and his location is {{employe.location}} he lies at index {{i}}</h3>
 </div> -->
-<h1>User form</h1>
+<h1>Forms</h1>
 <router-outlet></router-outlet>
-<button class="btn btn-primary" (click)="showUserForm()">Go to user Form</button>
+<br>
+<p>
+    <button class="btn btn-primary" style="margin-right: 10px;" (click)="showUserForm()">Go to user Form</button>
+    <button class="btn btn-primary" (click)="showDepartmentsForm()">Go to Departments Form</button>
+</p>

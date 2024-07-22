@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { TestComponent } from './test/test.component';
 import { TDFComponent } from './tdf/tdf.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 export const routes: Routes = [
     // { path: '', component: AppComponent },
     {
         path: '', component: Test3Component,
         children: [
-            { path: 'tdf', component: TDFComponent }
+            { path: 'tdf', component: TDFComponent },
+            {
+                path: 'rf', component: ReactiveformsComponent
+            }
         ]
 
     },
