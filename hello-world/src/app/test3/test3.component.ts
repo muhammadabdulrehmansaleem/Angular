@@ -68,5 +68,8 @@ export class Test3Component {
   showUserForm() {
     this.router.navigate(['tdf'], { relativeTo: this.route })
   }
+  showDepartmentsForm() {
+    this.router.navigate(['rf'], { relativeTo: this.route })
+  }
 }
 
